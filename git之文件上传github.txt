@@ -1,0 +1,27 @@
+上传到一个新仓库
+#echo "# dqwd" >> README.md  #创建readme文件
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:ResetDing/dqwd.git#直接复制命令
+git push -u origin main
+
+
+上传到已有仓库
+//master分支上
+git init
+git remote add origin git@github.com:ResetDing/test.git#直接github里面code下面ssh复制地址
+git add .
+git commit -m "first commit"
+//获取github的分支
+git fetch
+//切换到远程你想切换的那个分支:（比如我想切换的是main分支为例 其他的你可以origin/XXX）
+git checkout remotes/origin/main
+现在可以看到自己的分支是一串数字字母
+这时新建并切换到你想看的那个分支
+git checkout main
+将master分支合并到main分支上
+git merge master --allow-unrelated-histories
+//推送
+git push -u origin main
